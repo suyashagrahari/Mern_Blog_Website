@@ -1,7 +1,4 @@
-
-
-
-
+  require ('dotenv').config();
   const express = require("express");
   const app = express();
   const dotenv = require("dotenv");
@@ -12,7 +9,7 @@
   const categoryRoute = require("./routes/categories");
   const multer = require("multer");
   const path = require("path");
-  const dbLink = "mongodb://localhost:27017/blogs"
+  const dbLink = process.env.DB_LINK;
   dotenv.config();
   app.use(express.json());
   app.use("/images", express.static(path.join(__dirname, "/images")));
